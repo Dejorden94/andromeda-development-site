@@ -1,6 +1,12 @@
+// Styles
+import 'vuetify/styles'
+
 import '@fortawesome/fontawesome-free/css/all.css' // Ensure your project is capable of handling css files
+
+// Vuetify
 import { createVuetify } from 'vuetify'
 import { aliases, fa } from 'vuetify/iconsets/fa'
+
 
 export default createVuetify({
   icons: {

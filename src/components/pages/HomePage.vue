@@ -15,7 +15,6 @@
       </v-navigation-drawer>
 
       <v-main class="home-main">
-        <font-awesome-icon icon="fa-brands fa-linkedin" />
         <ProjectView />
       </v-main>
     </v-layout>
