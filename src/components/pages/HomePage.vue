@@ -58,10 +58,6 @@ export default defineComponent({
         title: 'Item #5',
         value: 5,
       },
-      {
-        title: 'Item #6',
-        value: 6,
-      },
     ],
   }),
 
