@@ -1,15 +1,14 @@
 <template>
-  <v-card min-height:100vh;>
-    <v-tabs v-model="tab" color="deep-purple-accent-4" align-tabs="end">
-      <v-tab :value="1">About</v-tab>
-      <v-tab :value="2">Projects</v-tab>
-      <v-tab :value="3">Contact</v-tab>
+  <v-card>
+    <v-tabs v-model="tab" color="deep-purple-accent-3" align-tabs="center">
+      <v-tab :value="1">Andormeda</v-tab>
+      <v-tab :value="2">Teaching</v-tab>
     </v-tabs>
     <v-window v-model="tab">
       <v-window-item v-for="n in 3" :key="n" :value="n">
         <v-container fluid>
           <v-row>
-            <v-col v-for="i in 6" :key="i" cols="12" md="2">
+            <v-col v-for="i in 6" :key="i" cols="12" md="4">
               <v-img :src="`https://picsum.photos/500/300?image=${i * n * 5 + 10}`"
                 :lazy-src="`https://picsum.photos/10/6?image=${i * n * 5 + 10}`" aspect-ratio="1"></v-img>
             </v-col>
@@ -27,4 +26,6 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.project-card {}
+</style>
