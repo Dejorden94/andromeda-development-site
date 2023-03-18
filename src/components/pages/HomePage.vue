@@ -15,6 +15,7 @@
       </v-navigation-drawer>
 
       <v-main class="home-main">
+        <font-awesome-icon icon="fa-brands fa-linkedin" />
         <ProjectView />
       </v-main>
     </v-layout>
@@ -23,7 +24,6 @@
 
 <script>
 import { defineComponent } from 'vue';
-import logo from '../../img/png/Andromeda-logo.png';
 
 
 // Components
@@ -56,14 +56,14 @@ export default defineComponent({
         title: 'Twitter',
         value: 3,
         props: {
-          prependIcon: logo,
+          prependIcon: "fa-brands fa-twitter",
         }
       },
       {
         title: 'GitHub',
         value: 4,
         props: {
-          prependIcon: logo,
+          prependIcon: "fa-brands fa-github",
         }
       },
     ],
