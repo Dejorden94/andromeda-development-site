@@ -23,7 +23,7 @@
 
 <script>
 import { defineComponent } from 'vue';
-import logo from '../../img/logo.svg';
+import logo from '../../img/png/Andromeda-logo.png';
 
 
 // Components
@@ -49,16 +49,22 @@ export default defineComponent({
         title: 'LinkedIn',
         value: 2,
         props: {
-          prependIcon: logo,
+          prependIcon: "fa-brands fa-linkedin",
         }
       },
       {
         title: 'Twitter',
         value: 3,
+        props: {
+          prependIcon: logo,
+        }
       },
       {
         title: 'GitHub',
         value: 4,
+        props: {
+          prependIcon: logo,
+        }
       },
     ],
   }),
