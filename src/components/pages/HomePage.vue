@@ -40,6 +40,9 @@ export default defineComponent({
       {
         title: 'Mail',
         value: 1,
+        props: {
+          prependIcon: 'fa-solid fa-envelope-open-text'
+        }
       },
 
       { type: 'divider' },
@@ -48,7 +51,7 @@ export default defineComponent({
         title: 'LinkedIn',
         value: 2,
         props: {
-          prependIcon: "fa-brands fa-linkedin",
+          prependIcon: 'fa-brands fa-linkedin',
         }
       },
       {
