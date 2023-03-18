@@ -23,6 +23,8 @@
 
 <script>
 import { defineComponent } from 'vue';
+import logo from '../../img/logo.svg';
+
 
 // Components
 import ProjectView from '../Organisms/ProjectOrganism.vue';
@@ -37,26 +39,26 @@ export default defineComponent({
     items: [
       { type: 'subheader', title: 'Contact' },
       {
-        title: 'Contact me',
+        title: 'Mail',
         value: 1,
       },
-      {
-        title: 'Item #2',
-        value: 2,
-      },
-      {
-        title: 'Item #3',
-        value: 3,
-      },
+
       { type: 'divider' },
       { type: 'subheader', title: 'Socials' },
       {
-        title: 'Item #4',
-        value: 4,
+        title: 'LinkedIn',
+        value: 2,
+        props: {
+          prependIcon: logo,
+        }
       },
       {
-        title: 'Item #5',
-        value: 5,
+        title: 'Twitter',
+        value: 3,
+      },
+      {
+        title: 'GitHub',
+        value: 4,
       },
     ],
   }),
