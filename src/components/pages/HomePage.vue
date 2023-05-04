@@ -4,43 +4,46 @@
       <v-app-bar title="Andromeda Development">
       </v-app-bar>
 
-      <v-navigation-drawer v-model="drawer" temporary>
-        <v-list-item prepend-avatar="https://randomuser.me/api/portraits/men/78.jpg"
-          title="Dejorden Moerman"></v-list-item>
+      <v-navigation-drawer v-model="drawer" :rail="rail" permanent @click="rail = false">
+        <v-list-item
+          prepend-avatar="https://media.licdn.com/dms/image/C4E03AQEySEj0BpD0aA/profile-displayphoto-shrink_800_800/0/1610970734616?e=1688601600&v=beta&t=a2r7uTn2GavY4mONCJIKf042jWqSdGYr2AxDwJccrQk"
+          title="Dejorden Moerman" nav>
+          <template v-slot:append>
+            <v-btn variant="text" icon="fa-solid fa-chevron-left" @click.stop="rail = !rail"></v-btn>
+          </template>
+        </v-list-item>
 
         <v-divider></v-divider>
-        <v-list-item title="Browes">
-          <v-list density="compact" nav>
-            <v-list-item prepend-icon="fa-solid fa-house" title="Home" value="home"></v-list-item>
-            <v-list-item prepend-icon="fa-solid fa-address-card" title="About" value="about"></v-list-item>
-          </v-list>
-        </v-list-item>
-        <v-divider></v-divider>
-        <v-list-item title="Social">
-          <v-list density="compact" nav>
-            <v-list-item prepend-icon="fa-brands fa-linkedin" title="Linkdin" svalue="linkdin"
-              href="https://www.linkedin.com/in/dejorden-moerman-b669a5a2/"></v-list-item>
-            <v-list-item prepend-icon="fa-brands fa-github-alt" title="GitHub" value="github"
-              href="https://github.com/Dejorden94"></v-list-item>
-            <v-list-item prepend-icon="fa-brands fa-twitter" title="Twitter" value="twitter"
-              href="https://twitter.com/DDejorden"></v-list-item>
-          </v-list>
-        </v-list-item>
-        <v-divider></v-divider>
-        <v-list-item title="Contact">
-          <v-list density="compact" nav>
-            <v-list-item prepend-icon="fa-solid fa-envelope" title="Mail" value="home"></v-list-item>
-          </v-list>
-        </v-list-item>
+
+
+        <v-list density="compact" nav>
+          <v-list-item prepend-icon="fa-solid fa-house" title="Home" value="home"></v-list-item>
+          <v-list-item prepend-icon="fa-solid fa-address-card" title="About" value="about"></v-list-item>
+        </v-list>
+
+
+
+        <v-list density="compact" nav>
+          <v-list-item prepend-icon="fa-brands fa-linkedin" title="Linkdin" svalue="linkdin"
+            href="https://www.linkedin.com/in/dejorden-moerman-b669a5a2/"></v-list-item>
+          <v-list-item prepend-icon="fa-brands fa-github-alt" title="GitHub" value="github"
+            href="https://github.com/Dejorden94"></v-list-item>
+          <v-list-item prepend-icon="fa-brands fa-twitter" title="Twitter" value="twitter"
+            href="https://twitter.com/DDejorden"></v-list-item>
+        </v-list>
+
+
+
+        <v-list density="compact" nav>
+          <v-list-item prepend-icon="fa-solid fa-envelope" title="Mail me!" value="home"></v-list-item>
+        </v-list>
+
       </v-navigation-drawer>
 
 
       <v-main class="home-main">
-        <MenuOrganism />
+        <!-- <MenuOrganism /> -->
 
-        <v-btn color="teal-lighten-2" @click.stop="drawer = !drawer">
-          Menu
-        </v-btn>
         <ProjectView />
 
       </v-main>
@@ -65,7 +68,7 @@ export default defineComponent({
   },
   data() {
     return {
-      drawer: null,
+      drawer: true,
       items: [
         { type: 'subheader', title: 'Contact' },
         {
@@ -104,6 +107,7 @@ export default defineComponent({
           }
         },
       ],
+      rail: true,
     }
   },
 });
