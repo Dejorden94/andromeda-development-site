@@ -15,14 +15,28 @@
             <v-list-item prepend-icon="mdi-forum" title="About" value="about"></v-list-item>
           </v-list>
         </v-list-item>
+        <v-divider></v-divider>
+        <v-list-item title="Social">
+          <v-list density="compact" nav>
+            <v-list-item prepend-icon="fa-linkedin" title="Linkdin" value="linkdin"
+              href="https://www.linkedin.com/in/dejorden-moerman-b669a5a2/"></v-list-item>
+            <v-list-item prepend-icon="mdi-forum" title="GitHub" value="github"
+              href="https://github.com/Dejorden94"></v-list-item>
+            <v-list-item prepend-icon="mdi-forum" title="Twitter" value="twitter"
+              href="https://twitter.com/DDejorden"></v-list-item>
+          </v-list>
+        </v-list-item>
       </v-navigation-drawer>
 
 
       <v-main class="home-main">
+        <MenuOrganism />
+
         <v-btn color="teal-lighten-2" @click.stop="drawer = !drawer">
           Menu
         </v-btn>
         <ProjectView />
+
       </v-main>
     </v-layout>
   </v-card>
@@ -34,12 +48,14 @@ import { defineComponent } from 'vue';
 
 // Components
 import ProjectView from '../Organisms/ProjectOrganism.vue';
+import MenuOrganism from '../organisms/MenuOrganism.vue'
 
 export default defineComponent({
   name: 'HomeView',
 
   components: {
     ProjectView,
+    MenuOrganism
   },
   data() {
     return {
