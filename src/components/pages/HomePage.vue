@@ -4,25 +4,16 @@
       <v-app-bar title="Andromeda Development">
       </v-app-bar>
 
-      <v-navigation-drawer v-model="drawer" temporary>
-        <v-list-item prepend-avatar="https://randomuser.me/api/portraits/men/78.jpg"
-          title="Dejorden Moerman"></v-list-item>
-
-        <v-divider></v-divider>
-        <v-list-item title="Contact">
-          <v-list density="compact" nav>
-            <v-list-item prepend-icon="mdi-view-dashboard" title="Home" value="home"></v-list-item>
-            <v-list-item prepend-icon="mdi-forum" title="About" value="about"></v-list-item>
-          </v-list>
-        </v-list-item>
-      </v-navigation-drawer>
-
+      <MenuOrganism />
 
       <v-main class="home-main">
+
+
         <v-btn color="teal-lighten-2" @click.stop="drawer = !drawer">
           Menu
         </v-btn>
         <ProjectView />
+
       </v-main>
     </v-layout>
   </v-card>
@@ -34,12 +25,14 @@ import { defineComponent } from 'vue';
 
 // Components
 import ProjectView from '../Organisms/ProjectOrganism.vue';
+import MenuOrganism from '../organisms/MenuOrganism.vue'
 
 export default defineComponent({
   name: 'HomeView',
 
   components: {
     ProjectView,
+    MenuOrganism
   },
   data() {
     return {
