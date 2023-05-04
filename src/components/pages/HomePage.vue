@@ -9,21 +9,27 @@
           title="Dejorden Moerman"></v-list-item>
 
         <v-divider></v-divider>
-        <v-list-item title="Contact">
+        <v-list-item title="Browes">
           <v-list density="compact" nav>
-            <v-list-item prepend-icon="mdi-view-dashboard" title="Home" value="home"></v-list-item>
-            <v-list-item prepend-icon="mdi-forum" title="About" value="about"></v-list-item>
+            <v-list-item prepend-icon="fa-solid fa-house" title="Home" value="home"></v-list-item>
+            <v-list-item prepend-icon="fa-solid fa-address-card" title="About" value="about"></v-list-item>
           </v-list>
         </v-list-item>
         <v-divider></v-divider>
         <v-list-item title="Social">
           <v-list density="compact" nav>
-            <v-list-item prepend-icon="fa-linkedin" title="Linkdin" value="linkdin"
+            <v-list-item prepend-icon="fa-brands fa-linkedin" title="Linkdin" svalue="linkdin"
               href="https://www.linkedin.com/in/dejorden-moerman-b669a5a2/"></v-list-item>
-            <v-list-item prepend-icon="mdi-forum" title="GitHub" value="github"
+            <v-list-item prepend-icon="fa-brands fa-github-alt" title="GitHub" value="github"
               href="https://github.com/Dejorden94"></v-list-item>
-            <v-list-item prepend-icon="mdi-forum" title="Twitter" value="twitter"
+            <v-list-item prepend-icon="fa-brands fa-twitter" title="Twitter" value="twitter"
               href="https://twitter.com/DDejorden"></v-list-item>
+          </v-list>
+        </v-list-item>
+        <v-divider></v-divider>
+        <v-list-item title="Contact">
+          <v-list density="compact" nav>
+            <v-list-item prepend-icon="fa-solid fa-envelope" title="Mail" value="home"></v-list-item>
           </v-list>
         </v-list-item>
       </v-navigation-drawer>
