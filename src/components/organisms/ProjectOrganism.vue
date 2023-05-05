@@ -97,5 +97,7 @@ export default {
 </script>
 
 <style scoped>
-.project-card {}
+.project-card {
+  height: 100vh;
+}
 </style>

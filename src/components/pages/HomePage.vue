@@ -17,19 +17,22 @@
 
 
         <v-list density="compact" nav>
-          <v-list-item prepend-icon="fa-solid fa-house" title="Home" value="home"></v-list-item>
-          <v-list-item prepend-icon="fa-solid fa-address-card" title="About" value="about"></v-list-item>
+          <v-list-item prepend-icon="fa-solid fa-house" title="Home" value="project" @click="toggleOrganisms('project')"
+            :disabled="clicked === 'project'"></v-list-item>
+          <v-list-item prepend-icon="fa-solid fa-address-card" title="About" value="about"
+            @click="toggleOrganisms('about')" :disabled="clicked === 'about'"></v-list-item>
+
         </v-list>
 
 
 
         <v-list density="compact" nav>
-          <v-list-item prepend-icon="fa-brands fa-linkedin" title="Linkdin" svalue="linkdin"
-            href="https://www.linkedin.com/in/dejorden-moerman-b669a5a2/"></v-list-item>
+          <v-list-item prepend-icon="fa-brands fa-linkedin" title="Linkdin" value="linkdin"
+            href="https://www.linkedin.com/in/dejorden-moerman-b669a5a2/" target="_blank"></v-list-item>
           <v-list-item prepend-icon="fa-brands fa-github-alt" title="GitHub" value="github"
-            href="https://github.com/Dejorden94"></v-list-item>
+            href="https://github.com/Dejorden94" target="_blank"></v-list-item>
           <v-list-item prepend-icon="fa-brands fa-twitter" title="Twitter" value="twitter"
-            href="https://twitter.com/DDejorden"></v-list-item>
+            href="https://twitter.com/DDejorden" target="_blank"></v-list-item>
         </v-list>
 
 
@@ -42,10 +45,9 @@
 
 
       <v-main class="home-main">
-        <!-- <MenuOrganism /> -->
 
-        <ProjectView />
-
+        <ProjectView v-show="showProject" />
+        <AboutOrganism v-show="showAbout" />
       </v-main>
     </v-layout>
   </v-card>
@@ -57,59 +59,41 @@ import { defineComponent } from 'vue';
 
 // Components
 import ProjectView from '../Organisms/ProjectOrganism.vue';
-import MenuOrganism from '../organisms/MenuOrganism.vue'
+import MenuOrganism from '../organisms/MenuOrganism.vue';
+import AboutOrganism from '../organisms/AboutOrganism.vue';
+
 
 export default defineComponent({
   name: 'HomeView',
 
   components: {
     ProjectView,
-    MenuOrganism
+    MenuOrganism,
+    AboutOrganism
   },
   data() {
     return {
       drawer: true,
-      items: [
-        { type: 'subheader', title: 'Contact' },
-        {
-          title: 'Mail',
-          value: 1,
-          href: '/mail',
-          props: {
-            prependIcon: 'fa-solid fa-envelope-open-text'
-          }
-        },
-
-        { type: 'divider' },
-        { type: 'subheader', title: 'Socials' },
-        {
-          title: 'LinkedIn',
-          value: 2,
-          href: 'https://www.linkedin.com/in/dejorden-moerman-b669a5a2/',
-          props: {
-            prependIcon: 'fa-brands fa-linkedin',
-          }
-        },
-        {
-          title: 'Twitter',
-          value: 3,
-          href: 'https://twitter.com/DDejorden',
-          props: {
-            prependIcon: "fa-brands fa-twitter",
-          }
-        },
-        {
-          title: 'GitHub',
-          value: 4,
-          href: 'https://github.com/Dejorden94',
-          props: {
-            prependIcon: "fa-brands fa-github",
-          }
-        },
-      ],
       rail: true,
+      showProject: true,
+      showAbout: false,
+      clicked: null
     }
   },
+  methods: {
+    toggleOrganisms(clicked) {
+      if (clicked === 'about' && this.showAbout === false && this.showProject === true) {
+        this.showAbout = true;
+        this.showProject = false;
+        this.clicked = 'about';
+      } else if (clicked === 'project' && this.showAbout === true && this.showProject === false) {
+        this.showAbout = false;
+        this.showProject = true;
+        this.clicked = 'project';
+      }
+    },
+
+  }
 });
 
 </script>
